@@ -1,0 +1,75 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+}
+
+#grid{
+    background-color: #fff;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* COLONNE */
+    /*  Mais aussi : 
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: repeat (4, 1fr);
+    la fonction repeat : pour synthétiser le code.
+    la 1ère valeur "4" : est le nombre de fois que l'on veut répéter.
+    la 2ème valeur "1fr" : est la taille.
+    */
+    grid-template-rows: 1fr 1fr;
+    /* RANGE */
+    /* Mais aussi : 
+    grid-template-rows: repeat (2, 1fr);
+    grid-template-rows: 50% 50%;
+    ATTENTION à la dernière ligne avec les valeurs en pourcentage : si on ajoute un gap, il vaut mieux utiliser l'unité de mesure "fr"" (fraction) sinon les cases sortes de la grille principale (l'enfant sort du parent)*/
+
+    
+    grid-gap: 20px;
+    /* GOUTTIERE */
+    /* Mais aussi : 
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    grid-gap: 20px 20px;
+    la 1ère valeur : correspondant à row;
+    la 2ème valeur : correspondant à column;*/
+    
+    
+    height: 600px;
+    width: 90%;
+    margin: auto;
+    
+}
+
+.flexbox{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+.un{
+    background-color: #fcf;
+}
+.deux{
+    background-color: #f9f;
+}
+.trois{
+    background-color: #ff7eff;
+}
+.quatre{
+    background-color: #ffcd98;
+}
+.cinq{
+    background-color: #ffca60;
+}
+.six{
+    background-color: #ff9f62;
+}
+.sept{
+    background-color: #ffc501;
+}
+.huit{
+    background-color: #fe9900;
+}
