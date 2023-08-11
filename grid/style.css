@@ -16,13 +16,29 @@ body{
     la fonction repeat : pour synthétiser le code.
     la 1ère valeur "4" : est le nombre de fois que l'on veut répéter.
     la 2ème valeur "1fr" : est la taille.
+
+    Autre syntaxe : 
+    grid-template-columns: repeat (2, 100px 200px);
+    la 1ère valeur "2" : est le nombre de fois que l'on veut répéter.
+    la 2ème valeur "100px" : est la première taille.
+    la 3ème valeur "200px" : est la second taille.
+    donc la grille affichera :
+    grid-template-columns: 100px 200px 100px 200px;
+
+    Les fonctions : 
+    repeat, auto, 
+    
     */
     grid-template-rows: 1fr 1fr;
     /* RANGE */
     /* Mais aussi : 
     grid-template-rows: repeat (2, 1fr);
     grid-template-rows: 50% 50%;
-    ATTENTION à la dernière ligne avec les valeurs en pourcentage : si on ajoute un gap, il vaut mieux utiliser l'unité de mesure "fr"" (fraction) sinon les cases sortes de la grille principale (l'enfant sort du parent)*/
+    ATTENTION à la dernière ligne avec les valeurs en pourcentage : si on ajoute un gap, il vaut mieux utiliser l'unité de mesure "fr"" (fraction) sinon les cases sortes de la grille principale (l'enfant sort du parent)
+    
+    hauteur, comportement par défaut : elles vont occuper la hauteur.
+    1/ soit la hauteur est déterminée par la hauteur du contenu ".un, .deux,..."
+    2/ soit la hauteur du contenant "#grid" si celui-ci à une taille déterminée.*/
 
     
     grid-gap: 20px;
@@ -51,6 +67,15 @@ body{
 
 .un{
     background-color: #fcf;
+    /* Correspond à la ligne de grille (on s'adresse aux enfants de la grille)*/
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    /* le mot clé : span
+    grid-row-end: span 2;
+    idem = on se réfère non plus aux lignes de grille mais aux rangés
+     */
 }
 .deux{
     background-color: #f9f;
