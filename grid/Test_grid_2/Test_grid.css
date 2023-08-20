@@ -1,0 +1,84 @@
+
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}html{box-sizing:border-box}*,::after,::before{box-sizing:inherit}img,video{width:100%;vertical-align:middle;}
+
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(6, 100px);
+    grid-gap: 5px;
+    grid-template-areas: 
+        "un un"
+        "deux deux"
+        "trois trois"
+        "quatre six"
+        "sept huit"
+        "neuf neuf";
+}
+
+.general{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    align-items: center;
+
+}
+
+.un{
+    background-color: #fcf;
+    grid-area: un;
+     
+}
+.deux{
+    background-color: #f9f;
+    grid-area: deux;
+}
+.trois{
+    background-color: #ff7eff;
+    grid-area: trois;
+}
+.quatre{
+    background-color: #ffcd98;
+    grid-area: quatre;
+}
+.cinq{
+    background-color: #ffca60;
+    grid-area: cinq;
+    visibility: hidden;
+}
+.six{
+    background-color: #ff9f62;
+    grid-area: six;
+}
+.sept{
+    background-color: #ffc501;
+    grid-area: sept;
+}
+
+.huit{
+    background-color: #fe9900;
+    grid-area: huit;
+}
+.neuf{
+    background-color: #ff7300;
+    grid-area: neuf;
+}
+
+@media(min-width: 901px){
+
+    .grid{
+        grid-template-columns: repeat(5, 20%);
+        grid-template-areas: 
+            "un un un un un"
+            "deux trois trois trois trois"
+            "deux quatre quatre quatre cinq"
+            "deux six six six cinq"
+            "sept sept sept huit huit"
+            "neuf neuf neuf neuf neuf";
+    }
+
+    .cinq{
+        visibility: visible;
+    }
+}

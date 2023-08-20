@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: #000;
+    background-color: #f5d97d;
 }
 
 #grid{
@@ -27,7 +27,29 @@ body{
 
     Les fonctions : 
     repeat, auto, 
+
+    Changer un ordre : 
+    grid-auto-flow : row; (par défaut les éléments s'affichent de droite à gauche)
+    grid-auto-flow : column; ( les éléments, dans l'ordre s'affichent de haut en bas)
+
+    Ajouter une colonne ou rangée virtuelle :
+    grid-auto-rows : 100px;
+    grid-auto-columns
     
+    la fonction minmax
+    c'est ce que l'on affecte à une valeur (parent ou/et enfant)
+    grid-template-rows : 100px minmax(200px, auto) 100px;
+
+    la propriété ordre
+    par défaut tous les éléments sont à 0 
+    C'est une propriété qui s'adresse aux enfants de la grid principale
+    order : 1; (pour qu'il s'affiche à la fin)
+    order : -1; (pour qu'il s'affiche au début)
+
+    grid template
+    raccourci grid-template-rows et grid-template-colums;
+
+
     */
     grid-template-rows: 1fr 1fr;
     /* RANGE */
@@ -70,6 +92,9 @@ body{
     /* Correspond à la ligne de grille (on s'adresse aux enfants de la grille)*/
     grid-column-start: 1;
     grid-column-end: 3;
+    /* grid-column : 1/3; (raccourci)*/
+
+    /* grid-row : 1/3; (raccourci)*/
     grid-row-start: 1;
     grid-row-end: 3;
     /* le mot clé : span
@@ -79,6 +104,9 @@ body{
 }
 .deux{
     background-color: #f9f;
+    grid-row: 1/ span 2;
+    /* grid-row-start: 1;
+    grid-row-end: span 2; */
 }
 .trois{
     background-color: #ff7eff;
@@ -94,7 +122,54 @@ body{
 }
 .sept{
     background-color: #ffc501;
+    grid-column: 3/span 2;
+    /* grid-column-start: 3;
+    grid-column-end: span 2; */
 }
 .huit{
     background-color: #fe9900;
+    grid-row-start: 2;
+    grid-row-end: 4;
 }
+
+
+/* exercice 2 */
+
+#grille{
+    display: grid;
+    height: 600px;
+    width: 90%;
+    margin: auto;
+    margin-top: 100px;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 4fr 1fr;
+
+    grid-template-areas: 
+    "header header"
+    "nav main"
+    "footer footer"
+    
+    
+    ;
+}
+
+header{
+    background-color: #2ef1c7;
+    grid-area: header;
+}
+
+main{
+    background-color: #cef0e8;
+    grid-area: main;
+}
+
+nav{
+    background-color: #45796d;
+    grid-area: nav;
+}
+
+footer{
+    background-color: #09755e;
+    grid-area: footer;
+}
+

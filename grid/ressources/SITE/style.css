@@ -1,0 +1,75 @@
+body {
+	margin:0;
+	padding:0;
+}
+#conteneur {
+	display: grid;
+	grid-template-columns: repeat(2, 50%);
+	grid-gap: 5px;
+	grid-template-areas :
+		"un un"
+		"deux deux"
+		"trois trois"
+		"quatre six"
+		"sept huit"
+		"neuf neuf";
+}
+.un {
+	background-color: #d44bcd;
+	grid-area: un;
+}
+.deux {
+	background-color: #f16b08;
+	grid-area: deux;
+}
+.trois {
+	background-color: #b2f109;
+	grid-area: trois;
+}
+.quatre {
+	background-color: #23f109;
+	grid-area: quatre;
+}
+.cinq {
+	background-color: #3050f0;
+	grid-area: cinq;
+	visibility: hidden;
+}
+.six {
+	background-color: #fbb5e9;
+	grid-area: six;
+}
+.sept {
+	background-color: #0af1ad;
+	grid-area: sept;
+}
+.huit {
+	background-color: #e8f571;
+	grid-area: huit;
+}
+.neuf {
+	background-color: #31838f;
+	grid-area: neuf;
+}
+.general {
+	padding: 20px;
+	font-size: 30px;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+}
+@media screen and (min-width: 901px) {
+.cinq {
+	visibility: visible;
+}
+#conteneur {
+	grid-template-columns: repeat(5, 20%);
+	grid-template-areas :
+		"un un un un un"
+		"deux trois trois trois trois"
+		"deux quatre quatre quatre cinq"
+		"deux six six six cinq"
+		"sept sept sept huit huit"
+		"neuf neuf neuf neuf neuf";
+}
+}
