@@ -1,0 +1,97 @@
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}html{box-sizing:border-box}*,::after,::before{box-sizing:inherit}img,video{width:100%;vertical-align:middle;}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+#grille{
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows:repeat(3, 1fr) 4fr 1fr ;
+
+    grid-template-areas: 
+    "header header header"
+    "nav nav nav"
+    "infos navBis aside"
+    "infos main aside"
+    "footer footer footer";
+
+    height: 100vh;
+}
+
+.flexbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    background-color: #0c65a7;
+    grid-area: header;
+}
+
+.navBis{
+    background-color: #ccccfc;
+    grid-area: navBis;
+}
+
+nav{
+    background-color: #124b78;
+    grid-area: nav;
+}
+
+.infos{
+    background-color: #bdddf7;
+    grid-area: infos;
+}
+
+main{
+    background-color: #16a2c5;
+    grid-area: main;
+}
+
+aside{
+    background-color: #5275ad; 
+    grid-area: aside;
+}
+
+
+footer{
+    background-color: #7ccce7;
+    grid-area: footer;
+}
+
+@media screen AND (min-width: 480px) AND (max-width: 959px){
+    #grille{
+        grid-template-columns: 1fr 4fr ;
+        grid-template-rows:repeat(3, 1fr) 4fr 1fr 1fr;
+        grid-template-areas: 
+        "header header"
+        "nav nav"
+        "infos navBis"
+        "infos main"
+        "aside aside"
+        "footer footer";
+    } 
+}
+
+@media screen AND (max-width:479px){
+    #grille{
+        grid-template-columns: 1fr;
+        grid-template-rows:repeat(3, 1fr) 4fr 1fr 1fr;
+        grid-template-areas: 
+        "header"
+        "nav"
+        "navBis"
+        "main"
+        "aside"
+        "footer";
+    } 
+
+    .infos{
+        display: none;
+    }
+}

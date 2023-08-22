@@ -1,0 +1,99 @@
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}html{box-sizing:border-box}*,::after,::before{box-sizing:inherit}img,video{width:100%;vertical-align:middle;}
+
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+#grille{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 2fr 3fr 1fr;
+    grid-gap: 5px;
+
+    grid-template-areas: 
+    "header header header"
+    "slide slide slide"
+    "section1 section2 section3"
+    "footer footer footer";
+
+    height: 100vh;
+}
+
+.flexbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    background-color: #fa7559;
+    grid-area: header;
+}
+
+.slide{
+    background-color: #47dee6;
+    grid-area: slide;
+}
+
+.section1{
+    background-color: #b3b3b3;
+    grid-area: section1;
+}
+
+.section2{
+    background-color: #b3b3b3;
+    grid-area: section2;
+}
+
+.section3{
+    background-color: #b3b3b3;
+    grid-area: section3;
+}
+
+footer{
+    background-color: #0c6222;
+    grid-area: footer;
+}
+
+@media screen AND (min-width: 480px) AND (max-width: 959px){
+    #grille{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 2fr 3fr 1fr;
+    
+        grid-template-areas: 
+        "header header"
+        "slide slide"
+        "section1 section2"
+        "footer footer";
+    }
+
+    .section3{
+        display: none;
+    }
+}
+
+@media screen AND (max-width:479px){
+    #grille{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr 3fr 1fr;
+    
+        grid-template-areas: 
+        "header"
+        "slide"
+        "section1"
+        "footer";
+    }
+
+    .section2{
+        display: none;
+    }
+    
+    .section3{
+        display: none;
+    }
+}
+
