@@ -1,0 +1,68 @@
+body{
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+.runner{
+    background-image: url('runner.png');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    height: 200px;
+    /* hauteur de l'image */
+    width: 266.6666666666667px;
+    /* pour éviter de voir les 24 images, on met la largeur d'une image. Calcul : 6400/24 */
+    margin-left: 100%;
+    animation: run 1s steps(24) infinite,
+               moveX 4s linear infinite;
+               /* steps(24) : correspond au nombre d'étapes */
+}
+@keyframes run{
+    /* 0%{
+        background-position: 0 0;
+    } */
+    /* VSCode considère que 0% est la propriété par défaut voilà pourquoi l'animation fonction sans (cf : ligne 9)*/
+    100%{
+        background-position: -6400px 0;
+        /* la valeur 6400px est basé sur la largeur total de l'image */
+        /* on déplace l'image de la droite vers la gauche */
+    }
+}
+
+@keyframes moveX{
+    /* 0%{
+        margin-left: 100%;
+    } */
+    /* VSCode considère que 0% est la propriété par défaut voilà pourquoi l'animation fonction sans (cf : ligne 12)*/
+    100%{
+        margin-left: -266.6666666666667px;
+        /* pour le faire sortir de l'écran sur toute sa largeur vers la gauche (à la fin de l'animation). Calcul : 6400/24*/
+    }
+}
+
+
+
+/* TEST CARRE */
+
+body{
+    margin: 0;
+    overflow: hidden;
+}
+
+.carre{
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+    animation: moveCarre 3s ease infinite;
+    /* animation: moveCarre 3s steps(5) infinite; */
+
+}
+
+@keyframes moveCarre{
+    0%{
+        margin-left: 0%;
+    }
+    100%{
+        margin-left: 100%;
+    }
+
+}

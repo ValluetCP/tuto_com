@@ -1,0 +1,172 @@
+/* ------- EXERCICE TUTO 5 - Barre de navigation -------  */
+
+nav{
+    height: 50px;
+    line-height: 50px;
+    background-color: #38ada9;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+body{
+    padding: 0px;
+    margin: 0;
+    height: 2000px;
+}
+/* ------- EXERCICE TUTO 1 - supperposition d'éléments  -------  */
+
+figure{
+    background-color: black;
+    font-size: 0;
+    margin-top: 100px;
+}
+
+figure a{
+    display: block;
+    position: relative;
+}
+
+figure a img{
+    width: 100%;
+    transition: opacity 0.2s ease-in;
+    
+    /* display: block; */
+
+}
+
+figure a:hover img{
+    opacity: 0.5;
+    /* transition: opacity 0.2s ease-in; */
+}
+
+figure a .fa-circle-plus{
+    position: absolute;
+    font-size: 70px;
+    top: 50%;
+    left: 50%;
+    color: orange;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+}
+
+figure a:hover .fa-circle-plus{
+    opacity: 1;
+}
+
+                    /* ------- EXERCICE TUTO 2 -------  */
+
+/* intégration d'éléments graphique avec les pseudo-element ::after et ::before */
+
+h2{
+    position: relative;
+}
+
+h2::before{
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 50px;
+    height: 5px;
+    background-color: #38ada9;
+    bottom: -10px;
+}
+
+h3{
+    position: relative;
+    text-align:center;
+
+}
+
+h3:after{
+    content: "";
+    position: absolute;
+    z-index: 1;
+    background-image: url(../fichiers_source/sources-tuto_positions/img/motif.png);
+    width: 210px;
+    height: 19px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top:25px;
+}
+
+/* pour centrer un élément en position absolu, 3 possilibités :
+
+1/ centre sur l'axe x (horizontal)
+.absolu{
+    left: 0;
+    right: 0;
+    margin: auto;
+}  
+
+
+.absolu{
+    width: 100%;
+    text-align: center;
+    left: 0;
+    
+} 
+
+
+1/ centre sur l'axe x et y
+.absolu{
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%,-50%);
+} 
+    
+*/
+
+.lien{
+    position: relative;
+    display: inline-block;
+    height: 10px;
+}
+
+.lien .fa-angle-down{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    top: 20px;
+    
+}
+
+
+                /* ------- EXERCICE TUTO 3 -------  */
+                    
+/* Création d'une liste avec des icônes */
+
+
+
+ul li{
+   list-style-type: none;
+   position: relative;
+   line-height: 36px;
+}
+
+
+ul li .fa-brands,
+ul li .fa-solid{
+    position: absolute;
+    z-index: 1;
+    left: -40px;
+    line-height: 36px;
+}
+
+
+/* ------- EXERCICE TUTO 6 - Barre de navigation  -------  */
+
+
+@media screen and (min-width:380px) and (max-width:480px){
+    nav{
+        position: statique;
+    }
+}

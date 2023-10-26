@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="app.css">
+    <title>Animations CSS - Pop-up</title>
+</head>
+<body>
+    <div class="content">
+        <button class="btn btn-newsletter">s'abonner à la newsletter</button>
+    </div>
+    <div class="pop-up">
+        <div class="pop-up-content">
+            <img class="cross" src="cross.svg" alt="">
+            <img class="letter" src="letter.svg" alt="">
+            <h1>Abonnez-vous à la newsletter !</h1>
+            <p>Pour ne pas rater les derniers tutoriels !</p>
+            <input type="email" placeholder="Votre e-mail">
+            <button class="btn btn-submit" type="submit">s'abonner</button>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            // cette syntaxe ci-dessous signifie : au clique, lui ajouter la class open (ce qui déclenchera l'animation, cf:css)
+            // Remove permet que quand la class close est ajouter que open disparaisse pour pour pouvoir répéter l'animation.
+            $('.btn-newsletter').on('click', function() {
+                $('.pop-up').removeClass('close');
+                $('.pop-up').addClass('open');
+            });
+
+            // cette syntaxe ci-dessous signifie : on cible .cross(l'image) et au clique, on déclenche une fonction qui va chercher un pop-up et va  ajouter la class close (ce qui déclenchera l'animation css .close (cf : .pop-up.close ligne 70))
+            // Remove permet que quand la class open est ajouter que close disparaisse pour pouvoir répéter l'animation.
+            $('.cross').on('click', function() {
+                $('.pop-up').removeClass('open');
+                $('.pop-up').addClass('close');
+            });
+
+
+        });
+    </script>
+</body>
+</html>

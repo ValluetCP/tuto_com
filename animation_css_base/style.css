@@ -1,0 +1,93 @@
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}html{box-sizing:border-box}*,::after,::before{box-sizing:inherit}img,video{width:100%;vertical-align:middle;}
+
+.carre{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    margin: 0 auto;
+    /* 
+    Les propriétés de transform : 
+    première valeur : X (horizontal)
+    deuxième valeur : Y (vertical) 
+    */
+    transform: translate(100px, 50px);
+    /* translate : valeur en pixel */
+
+    transform: scale(2, 2);
+    /* scale : valeur en unité */
+
+    transform: rotate();
+    /* rotate : valeur en degrés */
+    /* rotate sur l'axe de X, Y ou Z */
+
+    transform: skew();
+    /* skew : valeur en degrés - pour faire des sections oblique par exemple*/
+
+    /* Syntaxe pour appliquer plrs propriétés : 
+    transform: translateX(100px) rotateZ(45deg);
+    */
+
+}
+
+button{
+    padding: 12px 18px;
+    border: none;
+    outline: none;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: lightblue;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 20px;
+    
+
+    /* LES TRANSITIONS */
+
+    /* transition-duration: .5s; */
+    /* pour la durée */
+
+    /* transition-property: all; */
+    /* sur quelle propriétée on veut la transition, par défaut, elle s'applique sur toutes */
+
+    /* transition-delay: 0s; */
+    /* délais avant que la transition ne se déclenche */
+
+    /* transition-timing-function: ease; */
+    /* ease : accélère au début/ ralenti vers la fin  */
+    /* ease-in : lent/ rapide */
+    /* ease-out : rapide/ lent (ressemble au ease)*/
+    /* ease-in-out : lent/accélération au milieu / lent */
+    /* linear : transition linéaire */
+
+    /* lES 4 TRANSITIONS DANS UNE SEULE SYNTAXE */
+    transition: transform 0.5s 0s ease, background-color 1s 1s ease-in;
+    /* transition-property | transition-duration | transition-delay | transition-timing-function */
+}
+
+button:hover{
+    background-color: lightcoral;
+    transform: translateY(-5px);
+}
+
+.carre_mobile{
+    width: 100px;
+    height: 100px;
+    background-color: lightcoral;
+    /* transition-duration: .5s; */
+    animation: carreMove 3s ease infinite;
+    
+}
+
+@keyframes carreMove{
+    0%{
+        transform: translateX(0px);
+        /* margin-right: 100px; */
+    }
+    100%{
+        transform: translateX(400px);
+        /* margin-right: 100px; */
+    }
+}
+
+/* Transform */
+/* translate pour les déplacements horizontaux(X) verticaux(Y) et profondeur(Z) */

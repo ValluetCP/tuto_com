@@ -1,0 +1,71 @@
+/* transition */
+
+.box{
+    height: 200px;
+    width: 200px;
+    margin: 50px;
+    background-color: cyan;
+    /* transition-property: background, transform; */
+    /* transition-duration: 500ms; */
+    /* transition-timing-function: ease-out; */
+    /* cubic bézier */
+
+    transition: all 1s ease-in;
+}
+
+.box:hover{
+    background-color: red;
+    transform: rotate(45deg);
+    /* transition-duration: 1s; */
+    
+}
+
+
+/* Animation */
+
+.boxAnim{
+    height: 200px;
+    width: 200px;
+    margin: 50px;
+    background-color: pink;
+    border-radius: 50%;
+    /* animation-name: couleur;
+    animation-duration: 3s; */
+
+    /* animation-fill-mode: forwards; */
+    /* forwards: permet de garder le dernier style de notre animation à savoir green  */
+
+    /* animation-delay: 2s; */
+
+    /* animation-iteration-count: 2; */
+    /* nbr de fois où l'on veut répéter l'animation ou infinite */
+
+    /* animation-play-state: paused; */
+
+    /* animation-timing-function: ease; */
+
+    /* animation-direction: alternate; */
+    /* crée une continuité de l'animation au lieu de repartir à zéro : il va de 0% à 100% puis de 100% à 0% */
+
+
+    /* CODE RACCOURCI */
+    animation: couleur 3s alternate infinite;
+}
+
+@keyframes couleur{
+    0%{
+        background-color: pink;
+    }
+    30%{
+        background-color: yellow;
+    }
+    50%{
+        background-color: red;
+    }
+    70%{
+        background-color: violet;
+    }
+    100%{
+        background-color: green
+    }
+}

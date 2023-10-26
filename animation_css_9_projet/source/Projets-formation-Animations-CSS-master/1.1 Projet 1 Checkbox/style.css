@@ -1,0 +1,44 @@
+/* On cache l'input de base */
+input[type=checkbox]{
+    display: none;
+}
+
+/* On stylise le label pour faire le fond */
+
+label {
+    display: block;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    background-color: rgb(202,223,226);
+    border-radius: 25px;
+    margin: 250px auto 0 auto;
+    transition: all .4s ease-out;
+}
+
+/* on va creer le rond, le bouton */
+
+label::after {
+    content: '';
+    display: block;
+    position: relative;
+    top: 5px;
+    left: 5px;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(141,172,175);
+    border-radius: 50%;
+    transition: all .4s ease-out;
+}
+
+/* utilisation de la pseudo-class checked */
+/* qd je checked, ça change la couleur du bg */
+input:checked + label {
+    background-color: rgb(150,239,184);
+}
+
+/*  la syntaxe avec le + : qui veut dire cible le label qui est juste après input */
+input:checked + label::after {
+    transform: translate(50px,0);
+    background-color: rgb(29,105,52);
+}

@@ -1,0 +1,105 @@
+body{
+    margin: 0;
+    height: 100vh;
+}
+header{
+    background-color: lightskyblue;
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+}
+.road{
+    position: absolute;
+    bottom: 0;
+    height: 170px;
+    background-color: #555;
+    width: 100%;
+}
+.lines-middle{
+    background-image: linear-gradient(to right, white 33%, rgba(255,255,255,0) 0%);
+    background-position: bottom;
+    background-size: 200px 2px;
+    background-repeat: repeat-x;
+    height: 6px;
+    position: absolute;
+    width: 100%;
+}
+.middle-top{
+    background-image: linear-gradient(to right, white 33%, rgba(255,255,255,0) 0%);
+    background-position: bottom;
+    background-size: 200px 2px;
+    background-repeat: repeat-x;
+    height: 6px;
+    position: absolute;
+    bottom: 6px;
+    width: 100%;
+}
+.bushes{
+    background-image: url('bushes.png');
+    height: 79px;
+    position: absolute;
+    bottom: 170px;
+    width: 100%;
+}
+.mario{
+    position: absolute;
+    top: -60px;
+    animation: moveX 3s linear 0s infinite normal both,
+               jump 0.6s ease-in-out 1.5s 1 normal both;
+}
+.luigi{
+    position: absolute;
+    top: 20px;
+    animation: moveX 4s linear 0s infinite normal both;
+}
+.clouds, .cloud{
+    position: absolute;
+    top: 150px;
+    animation: moveX 30s linear 0s infinite reverse both;
+    /* raccourci du code ANIMATION */
+    /* name duration timing-function delay iteration-count direction fill-mode */
+}
+.clouds{
+    left: 150px;
+}
+.cloud{
+    left: 400px;
+}
+.lakitu{
+    position: absolute;
+    top: 400px;
+    left: 250px;
+    animation: lakitu 2s ease-in-out 0s infinite normal;
+}
+@keyframes moveX{
+    from{
+        transform: translateX(-550px);
+        /* début de l'animation */
+    }
+    to{
+        transform: translateX(2200px);
+        /* fin de l'animation */
+    }
+}
+@keyframes lakitu{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(30px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+@keyframes jump{
+    0%{
+        top: -60px;
+    }
+    50%{
+        top: -140px;
+    }
+    100%{
+        top: -60px;
+    }
+}

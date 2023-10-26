@@ -1,0 +1,470 @@
+/* STYLES GENERAUX */
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0 0 50px 0;
+    background-color: #2f3238;
+    color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+.sources a {
+    color: #2980b9;
+}
+
+@media screen and (min-width:768px) {
+    section {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    article {
+        -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
+        /* flex-basis : équivalent de width */
+    }
+}
+
+article {
+    margin-top: 15px;
+}
+
+img {
+    width: 100%;
+    opacity: 0.8;
+}
+
+figure {
+    margin: 0;
+    background-color: #000;
+    font-size: 0;
+    /* font-size : fait disparaitre la fausse marge (la bordure en bas de l'image) */
+    position: relative;
+    overflow: hidden;
+}
+
+figcaption {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    /* il prendra la taille de son parent */
+    width: 100%;
+    height: 100%;
+    padding: 10%;
+    box-sizing: border-box;
+}
+
+figure a {
+    /* pour rendre toute la balise figure cliquable */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+h3,
+p {
+    color: #fff;
+}
+
+h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+p {
+    font-size: 18px;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 50px 0;
+    padding: 25px 0;
+    background-color: #26292f;
+}
+
+
+/* STYLES GENERAUX */
+
+
+/* EFFET-1 */
+
+.effet-1 {
+    background-color: #e74c3c;
+}
+
+.effet-1 h3 {
+    position: relative;
+}
+
+.effet-1 h3:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    bottom: -10px;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.effet-1:hover h3:before {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Animation du texte */
+.effet-1 p {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.effet-1:hover p {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Animation de l'img */
+.effet-1 img {
+    /* pour agrandir l'image de 20px pour combler l'écart puisque l'img à été décaler de 20px juste en-dessous */
+    width: calc(100% + 20px);
+}
+
+.effet-1:hover img {
+    opacity: 0.5;
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+}
+
+.effet-1 img,
+.effet-1 p,
+.effet-1 h3:before {
+    -webkit-transition: opacity 0.35s ease-in-out;
+    -webkit-transition: opacity 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
+    transition: opacity 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
+    transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
+    transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
+}
+
+
+/* EFFET-1 */
+
+
+/* EFFET-2 */
+
+.effet-2 {
+    background: rgb(50, 255, 227);
+    background: -webkit-linear-gradient(45deg, rgba(50, 255, 227, 1) 0%, rgba(58, 75, 255, 1) 100%);
+    background: linear-gradient(45deg, rgba(50, 255, 227, 1) 0%, rgba(58, 75, 255, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#32ffe3', endColorstr='#3a4bff', GradientType=1);
+    text-align: center;
+}
+
+/* Création des bordures (cadre) - leur placement */
+.effet-2 figcaption:before,
+.effet-2 figcaption:after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+    -webkit-transition: -webkit-transform 0.35s ease-in-out;
+    transition: -webkit-transform 0.35s ease-in-out;
+    transition: transform 0.35s ease-in-out;
+    transition: transform 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
+}
+
+/* Animation des bordures (cadre) - les lignes horizontales*/
+.effet-2 figcaption:before {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+}
+
+/* Animation des bordures (cadre) - les lignes verticales*/
+.effet-2 figcaption:after {
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    -webkit-transform: scale(1, 0);
+    transform: scale(1, 0);
+}
+
+.effet-2:hover figcaption:before,
+.effet-2:hover figcaption:after {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+}
+
+.effet-2 p {
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+    opacity: 0;
+}
+
+.effet-2:hover p {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.effet-2:hover img {
+    opacity: 0.5;
+    -webkit-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
+}
+
+.effet-2 img,
+.effet-2 p {
+    -webkit-transition: opacity 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
+    transition: opacity 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
+    transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
+    transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
+}
+
+
+/* EFFET-2 */
+
+
+/* EFFET-3 */
+
+.effet-3 {
+    /* pour annuler le overflow: hidden; mis sur la balise figure */
+    overflow: visible;
+    text-align: center;
+}
+
+.effet-3:before,
+.effet-3 h3:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.7);
+    -webkit-transition: opacity 0.35s ease-in-out;
+    transition: opacity 0.35s ease-in-out;
+}
+
+.effet-3:before {
+    opacity: 0;
+}
+
+/* autre syntaxe plus longue: */
+/* .effet-3:hover .effet-3:before */
+.effet-3:hover:before {
+    opacity: 1;
+}
+
+.effet-3 h3,
+.effet-3 p {
+    color: #555;
+    background-color: #fff;
+    padding: 5px;
+}
+
+.effet-3 h3 {
+    position: relative;
+}
+
+.effet-3:hover h3:before {
+    opacity: 0;
+}
+
+.effet-3 p {
+    -webkit-transform: scale(0.9, 0.9);
+    transform: scale(0.9, 0.9);
+    opacity: 0;
+    -webkit-transition: opacity 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
+    transition: opacity 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
+    transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
+    transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
+}
+
+.effet-3:hover p {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    opacity: 1;
+}
+
+.effet-3 img {
+    opacity: 1;
+    -webkit-transform: perspective(1000px);
+    transform: perspective(1000px);
+    -webkit-transition: -webkit-transform 0.35s ease-in-out;
+    transition: -webkit-transform 0.35s ease-in-out;
+    transition: transform 0.35s ease-in-out;
+    transition: transform 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
+}
+
+.effet-3:hover img {
+    -webkit-transform: perspective(1000px) translateZ(20px);
+    transform: perspective(1000px) translateZ(20px);
+}
+
+
+/* EFFET-3 */
+
+
+/* EFFET-4 */
+
+.effet-4 {
+    background-color: #e67e22;
+}
+
+/* animation de la diagonale(reflet) */
+.effet-4 figcaption:before {
+    content: '';
+    position: absolute;
+    /* on a donnée à :before la taille de son parent figure */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    -webkit-transform: rotateZ(45deg) scale(2, 2) translateY(-100%);
+    transform: rotateZ(45deg) scale(2, 2) translateY(-100%);
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+    transition: -webkit-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+.effet-4:hover figcaption:before {
+    -webkit-transform: rotateZ(45deg) scale(2, 2) translateY(100%);
+    transform: rotateZ(45deg) scale(2, 2) translateY(100%);
+}
+
+.effet-4 p {
+    position: absolute;
+    text-align: right;
+    bottom: 0;
+    right: 0;
+    margin: 30px;
+    padding-right: 10px;
+    border-right: 4px solid #fff;
+    max-width: 250px;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s ease-in-out;
+    transition: opacity 0.35s ease-in-out;
+}
+
+.effet-4:hover p {
+    opacity: 1;
+}
+
+.effet-4:hover img {
+    opacity: 0.5;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+}
+
+.effet-4 img {
+    -webkit-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
+    -webkit-transition: opacity 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
+    transition: opacity 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
+    transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
+    transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
+}
+
+
+/* EFFET-4 */
+
+
+/* EFFET-5 */
+
+.effet-5 h3 {
+    margin-bottom: 25px;
+}
+
+.effet-5 p {
+    background-color: #e74c3c;
+    display: inline-block;
+    padding: 5px;
+    margin: 5px 0 5px 0;
+    -webkit-transform: translateX(-200%);
+    transform: translateX(-200%);
+    -webkit-transition: -webkit-transform 0.35s ease-in-out;
+    transition: -webkit-transform 0.35s ease-in-out;
+    transition: transform 0.35s ease-in-out;
+    transition: transform 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
+}
+
+
+/* animation départ des textes */
+.effet-5 .p1 {
+    -webkit-transition-delay: 0.20s;
+    transition-delay: 0.20s;
+}
+
+.effet-5 .p2 {
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+}
+
+.effet-5 .p3 {
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+
+/* animation arrivée des textes */
+.effet-5:hover .p1 {
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+.effet-5:hover .p2 {
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+}
+
+.effet-5:hover .p3 {
+    -webkit-transition-delay: 0.20s;
+    transition-delay: 0.20s;
+}
+
+.effet-5:hover p {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.effet-5 img {
+    width: calc(100% + 60px);
+    -webkit-transition: opacity 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+.effet-5:hover img {
+    opacity: 0.5;
+    -webkit-transform: translateX(-60px) scale(1.1, 1.1);
+    transform: translateX(-60px) scale(1.1, 1.1);
+}
+
+
+/* EFFET-5 */
