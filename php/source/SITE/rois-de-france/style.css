@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Parisienne');
+body {
+	margin: 0;
+	padding:0;
+	background-image: url(media/chateau.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-color: #000;
+	color: #000;
+	font-size: 13px;
+	font-family: arial;
+}
+#site {
+	width: 750px;
+	background-color: #fff;
+	padding: 10px;
+	border-right: 1px solid #333;
+	display: grid;
+	grid-template-areas:
+		"header"
+		"nav"
+		"article"
+		"footer";
+}
+header {
+	grid-area: header;
+	text-align: center;
+	font-family: 'Parisienne', cursive;
+	font-size: 55px;
+	font-weight: bold;
+	text-shadow: 2px 2px 2px #aaa;
+	border-bottom: 1px dashed #ccc;
+}
+nav {
+	grid-area: nav;
+	display: flex;
+	justify-content: space-around;
+	border-bottom: 1px dashed #ccc;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+.navRoi {
+	text-align: center;
+}
+.navRoi h2 {
+	font-size: 20px;
+	font-family: times;
+	margin-bottom: 0;
+}
+.avatar {
+	background-size: cover;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	opacity: 0.75;
+}
+.avatar:hover {
+	opacity: 1;
+}
+article {
+	grid-area: article;
+	width: 75%;
+	margin: auto;
+}
+article p {
+	text-align: justify;
+}
+article h1 {
+	text-align: center;
+	padding-top: 10px;
+	font-size: 35px;
+	font-family: times;
+}
+.imgRoi {
+	width: 200px;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 8px;
+}
+footer {
+	grid-area: footer;
+	text-align: center;
+	color: #999;
+	padding-top: 30px;
+}
+
+@media screen and (max-width: 750px) {
+#site {
+	width: 90%;
+	margin: auto;
+}
+.avatar {
+	width: 70px;
+	height: 70px;
+}
+.navRoi h2 {
+	font-size: 15px;
+}
+.imgRoi {
+	width: 100%;
+	margin-right: 0;
+}
+}

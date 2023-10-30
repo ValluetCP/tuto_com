@@ -16,6 +16,8 @@ $prix = 10;
 </head>
 <body>
 
+<!-- TUTO PARTIE 1 : ON TEST LES INSTUCTIONS CONDITIONNELLES -->
+
 <!-- TEST AVEC FOMULAIRE / METHOD POST -->
     
     <!-- <form action="traitement.php" method="post">
@@ -38,17 +40,80 @@ $prix = 10;
     </ul> -->
 
 
+<?php //$_POST['calculer'] - DEBUT
+if(isset($_POST['calculer'])){
+    if($_POST['qt']){ //$_POST['qt'] - DEBUT
+?>
+<?php 
+    // $prix = $_POST['prix'];
+    $qt = $_POST['qt'];
+?>
+
+
+<?php // Test si $qt est un entier - DEBUT
+$qt = ceil($qt);
+if((!is_numeric($qt)) OR ($qt <= 0)){
+?>
+
+<h1 align="center">Une erreur est survenue !</h1>
+
+<?php // Test si $qt est un entier - SUITE
+} else{
+?>
+    <?php
+    // CALCUL OFFRE (Au delà de 10 articles, -20% de remise)
+
+    if($qt == 10){
+        $total = $prix * ($qt-1);
+        $message = "Remise de ". $prix . "euros.";
+
+    }elseif($qt > 10){
+        $total = $prix * $qt;
+        $remise = $total * 0.2;
+        $total = $total - $remise;
+        $message = 'remise de '.$remise.'Euros';
+    }else{
+        $total = $prix * $qt;
+        $message = "Pour bénéficier d'une remise, achetez 10 articles ";
+    }
+
+    ?>
+
+    <h1 align="center">
+        Le prix total à payer est de <?= $total; ?> Euros.<br>
+        <?= $message; ?>
+    </h1>
+
+<?php // Test si $qt est un entier - FIN
+}
+?>
+
+<?php //$_POST['qt'] - FIN
+}
+?>
+<p align="center"><a href="index.php">RETOUR</a></p>
+<?php //$_POST['calculer'] - SUITE
+} else {
+    // Sinon tu affiche le formulaire
+?>
 
 <!-- TEST AVEC FOMULAIRE (CALCUL) / METHOD POST -->
     
-    <h1 align="center"> Le prix est de <?= $prix; ?> </h1>
+    <h1 align="center"> Le prix est de <?= $prix; ?>€</h1>
+    <p align="center">Un deuxième article acheté, le troisième offert !</p>
+    <p align="center">Si vous acheté plus de 10 articles, -20% de remise !</p>
 
-    <form action="traitement2.php" method="post">
+    <!-- traitement2.php -->
+    <form action="" method="post">
         <p  align="center">
-            <input type="number" name="qt" id="qt" placeholder="quantité">
-            <input type="hidden" name="prix" value="<?= $prix; ?>">
-            <input type="submit" value="calculer">
+            <input type="text" name="qt" id="qt" placeholder="quantité">
+            <!-- <input type="hidden" name="prix" value="<?= $prix; ?>"> -->
+            <input type="submit" name="calculer" value="calculer">
         </p>
     </form>
+
+<?php //$_POST['calculer'] - FIN
+} 
+?>
 </body>
 </html>
