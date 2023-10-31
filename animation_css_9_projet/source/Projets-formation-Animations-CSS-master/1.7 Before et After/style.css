@@ -24,6 +24,9 @@ body {
     text-transform: uppercase;
     overflow: hidden;
 }
+
+/* Création de la diagonale - début animation */
+/* on peut écrire avec before ou after */
 .btn::after {
     content: '';
     background: #45a29e;

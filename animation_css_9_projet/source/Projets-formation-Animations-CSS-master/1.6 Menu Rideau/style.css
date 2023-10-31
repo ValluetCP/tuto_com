@@ -41,6 +41,7 @@ span {
     color: #f1f1f1;
 }
 
+/* personnalisation de la croix */
 .overlay .closeBtn {
     position: absolute;
     top: 20px;
