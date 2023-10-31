@@ -1,0 +1,126 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(./img/chateau.jpg);
+    background-repeat: no-repeat;
+    /* Pour fixele bg, pas de scroll */
+    background-attachment: fixed;
+    background-color: #000;
+    color: #000;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#site{
+    width: 750px;
+    background-color: #fff;
+    padding: 10px;
+    border-right: 1px solid #333;
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "article"
+    "footer";
+}
+
+header{
+    grid-area: header;
+    text-align: center;
+    font-family: 'Parisienne', cursive;
+    font-size: 55px;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px #aaa;
+    border-bottom: 1px dashed#ccc;
+}
+
+nav{
+    grid-area: nav;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px dashed#ccc;
+    padding: 12px 0;
+}
+
+article{
+    grid-area: article;
+    width: 75%;
+    margin: auto;
+}
+
+article p{
+    text-align: justify;
+}
+
+article h1{
+    text-align: center;
+    padding-top: 10px;
+    font-size: 35px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+footer{
+    grid-area: footer;
+    text-align: center;
+    color: #999;
+    padding-top: 30px;
+}
+
+/* Rendre une image ronde */
+.avatar{
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    opacity: 0.75;
+}
+
+.avatar:hover{
+    opacity: 1;
+}
+
+.navRoi{
+    text-align: center;
+}
+
+.navRoi h2{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 0;
+}
+
+.imgRoi{
+    width: 200px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 8px;
+}
+
+@media screen and (max-width: 750px) {
+    #site{
+        width: 90%;
+        margin: auto;
+        
+    }
+
+    .avatar{
+        width: 70px;
+        height: 70px;
+    }
+    
+    .navRoi h2{
+        font-size: 15px;
+        
+    }
+    
+    .imgRoi{
+        width: 100%;
+        margin-right: 0px;
+    }
+}
+
