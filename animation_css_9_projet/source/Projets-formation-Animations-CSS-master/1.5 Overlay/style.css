@@ -11,8 +11,8 @@ body {
 }
 
 /* overlay avec texte au milieu et contour opaque */
-/* 
-img {
+
+/* img {
     width: 100%;
     height: auto;
     transition: 0.5s;
@@ -82,7 +82,9 @@ img {
     position: absolute;
     right: 0;
     left: 0;
+    /* bottom si on veut le faire partir d'en bas et top:0 si on veut que l'animation aille du haut vers le bas */
     bottom: 0;
+    /* une animation de gauche à droite, mettre width:0 et height:100% et top:0 sans bottom*/
     width: 100%;
     height: 0%;
     background: #008cba;
