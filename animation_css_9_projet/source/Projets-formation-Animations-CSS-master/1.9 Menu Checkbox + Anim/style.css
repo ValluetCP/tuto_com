@@ -11,6 +11,7 @@ body {
     display: none;
 }
 
+/* bouton arrondi rouge */
 .navigationBg {
     height: 96px;
     width: 96px;
@@ -23,6 +24,7 @@ body {
     transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
+/* bouton arrondi blanc - légèrement plus grand que le rouge pour le couvrir*/
 .navigationBtn {
     background-color: #fff;
     height: 112px;
