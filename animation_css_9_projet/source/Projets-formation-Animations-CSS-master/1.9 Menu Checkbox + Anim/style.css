@@ -110,10 +110,12 @@ body {
     width: 100%;
 }
 
+/* Menu burger - rendre invisible la barre du milieu au clique */
 .navigationCheckbox:checked + .navigationBtn .navigationIcon {
     background-color: transparent;
 }
 
+/* Menu burger - barre à l'extrémité au clique il effectue une rotation pour faire une croix*/
 .navigationCheckbox:checked + .navigationBtn .navigationIcon::before {
     top: 0;
     transform: rotate(135deg);
