@@ -47,6 +47,10 @@
             <p>Crâne de Velociraptor, Crétacé supérieur de 78 à 65 millions d'années (Djadochta, Mongolie), Musée d'Histoire Naturelle d'Aix-en-Provence<br>
             Le vélociraptor se distingue des autres droméosauridés par sa tête très étroite et aplatie. En revanche, le volume de son cerveau est relativement important proportionnellement à sa taille. Sa morphologie laisse à penser qu'il disposait de la vision tridimensionnelle. Le vélociraptor se nourrissait sans doute de tylocephales, d'oviraptors, de protocératops, de gallimimus et de petits mammifères. </p>";
             break;
+        default:
+            $titre = 'Erreur';
+            $texte = "Ce dinosaure n'existe pas dans nos données";
+
         
        }
     } else {
