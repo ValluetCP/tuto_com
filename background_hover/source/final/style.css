@@ -1,0 +1,66 @@
+body {
+    margin:0;
+    padding:0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    font-family: 'Raleway';
+    font-size:24px;
+    background-size:cover;
+    background-position:center center;
+}
+
+h1 {
+    font-family: 'Playfair Display';
+    font-weight: 400;
+    font-style: italic;
+    font-size:96px;
+    line-height: 1;
+    margin:0 0 50px 0;
+    cursor:default;
+}
+
+h1 span {
+    color:#ff1798;
+}
+
+a {
+    position: relative;
+    /* réduit la zone de clique au texte plutôt qu'a la div parent */
+    display:inline-block;
+    color:#000;
+    text-decoration:none;
+    padding:10px 0;
+    transition:0.2s;
+}
+
+a:hover {
+    transform:scale(1.2);
+    letter-spacing: 2px;
+    color:#fff;
+}
+
+a:before {
+    content:'';
+    display:block;
+    position:absolute;
+    z-index:-1;
+    bottom:10px;
+    left:0;
+    width:0%;
+    height:8px;
+    background:#ff1798;
+    transition:0.4s;
+}
+
+a:hover:before {
+    width:100%;
+}
+
+nav.menu ul {
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    text-align: center;
+}
