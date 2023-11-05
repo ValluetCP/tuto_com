@@ -10,10 +10,11 @@ btn.addEventListener('click', () => {
 
     allItems.forEach(item => {
 
+        // faire apparaître les icônes...
         item.classList.toggle('apparition')
-
+        // contains vérifie s'il a la class apparition
         if(item.classList.contains('apparition') === true){
-
+            // ...avec un temps d'attente
             setTimeout(() => {
                 item.classList.toggle('real');
             }, 200)
@@ -31,7 +32,7 @@ allItems.forEach(item => {
 
         btn.classList.toggle('active');
         ligne.classList.toggle('active-ligne');
-
+        // enlevé la class apparition aux icones
         allItems.forEach(item => {
             item.classList.toggle('real')
             item.classList.toggle('apparition')

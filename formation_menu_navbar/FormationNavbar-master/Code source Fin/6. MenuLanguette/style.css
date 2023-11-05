@@ -3,6 +3,8 @@
     margin: 0;
     padding: 0;
 }
+
+/* pour cacher la scrollbar dans safari */
 ::-webkit-scrollbar {
     width: 0;
     height: 0;

@@ -35,10 +35,12 @@ nav {
 
 .sous-liste {
     position: relative;
+    /* pas visible au début */
     display: none;
 }
 .items-sous-liste {
     list-style-type: none;
+    /* faire passer à la ligne les mots trop grand */
     word-break: break-word;
     text-align: center;
     padding: 0 10px;
@@ -51,6 +53,8 @@ nav {
 .items-sous-liste:nth-child(3) {
     height: 50px;
 }
+
+/* > cible les enfant direct d'un élément */
 .items:hover > ul {
     display: block;
 }
