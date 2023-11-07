@@ -28,12 +28,14 @@ itemListe.forEach(item => item.addEventListener('mouseenter', () => {
             imgChange.src = "ressources/pic" + item.getAttribute('data-id') + ".jpg";
             TweenMax.to(imgChange,0.1,{opacity: 0.4})
             TweenMax.to(imgChange,0.2,{delay:0.1, opacity:1})
+            // pour que l'image reste tant que nous ne survolons pas d'autres images
             imgDejaMiseEnPlace = item.getAttribute('data-id');
     }   
     
 
 }))
 
+// Faire partir la languette quand on clique sur un élément du menu
 itemListe.forEach(item => item.addEventListener('click', () => {
 
     toggle--;

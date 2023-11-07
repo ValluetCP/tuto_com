@@ -1,0 +1,3 @@
+Code source pour le projet Slider : https://github.com/Ziratsu/SliderGSAP
+
+Bon apprentissage !

@@ -1,0 +1,183 @@
+      /* Override some defaults */
+      html, body {
+        background-color: #eee;
+      }
+      .container > footer p {
+        text-align: center; /* center align it with the container */
+      }
+      .container {
+        width:896px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
+      }
+
+      /* The white background content wrapper */
+      .content {
+        background-color: #fff;
+        padding: 20px;
+        margin: 0px; /* negative indent the amount of the padding to maintain the grid system */
+        -webkit-border-radius: 0 0 6px 6px;
+           -moz-border-radius: 0 0 6px 6px;
+                border-radius: 0 0 6px 6px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                box-shadow: 0 1px 2px rgba(0,0,0,.15);
+      }
+
+      /* Page header tweaks */
+      .page-header {
+        background-color: #f5f5f5;
+        padding: 20px 20px 10px;
+        margin: -20px -20px 20px;
+      }
+
+      /* Styles you shouldn't keep as they are for displaying this base example only */
+      .content .span10,
+      .content .span4 {
+        min-height: 500px;
+      }
+      /* Give a quick and non-cross-browser friendly divider */
+      .content .span4 {
+        margin-left: 0;
+        padding-left: 19px;
+        border-left: 1px solid #eee;
+      }
+
+      .topbar .btn {
+        border: 0;
+      }
+	  
+	  .active {background-color:#ccc;}
+		
+	/*  Effet survol   */
+	
+	@font-face {
+    font-family: 'BallparkWeiner';
+    src: url('fonts/ballpark_weiner-webfont.eot');
+    src: url('fonts/ballpark_weiner-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/ballpark_weiner-webfont.woff') format('woff'),
+         url('fonts/ballpark_weiner-webfont.ttf') format('truetype'),
+         url('fonts/ballpark_weiner-webfont.svg#BallparkWeiner') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+	
+	
+	a {
+    color:#ff0060; 
+    text-decoration:none;
+  }
+
+	a:hover {
+    color:#9a003a; 
+    text-decoration:none;
+  }
+	
+	#portfolio {margin:0px; padding:0px; list-style-type:none;}
+	#portfolio li {
+    /* pour mettre les images les unes à la suite des autres */
+    float:left; position:relative;}
+	#portfolio li img {vertical-align:middle;}
+	
+	.detail {
+    position:absolute; 
+    background:url(img/pattern.png) top left repeat; 
+    width:200px; 
+    height:160px; 
+    top:-35px; 
+    left:-12px;color:#FFF; padding:15px 20px 20px 20px; z-index:100; 
+    /* comme ça on est sur que le texte ne dépasse pas */
+    overflow:hidden; 
+    /* Pour cacher le bloc de détails */
+    display:none; 
+    box-shadow: 0px 0px 10px #000; 
+    -webkit-box-shadow: 0px 0px 10px #000; 
+    -moz-box-shadow: 0px 0px 10px #000; 
+    border-radius:5px; 
+    -webkit-border-radius:5px; 
+    -moz-border-radius:5px;}
+	
+	.detail p {cursor:default; font-size:11px; color:#ccc;}
+
+	.detail h2 {
+    margin:0 0 15px 0; 
+    padding:0px; 
+    font-family:BallparkWeiner; 
+    font-weight:normal; 
+    border-bottom:1px solid #3b3b3b; 
+    text-shadow:1px 1px #000;}
+	
+	.clear {clear:both;}
+	
+	.icone {
+    position:absolute; 
+    bottom:20px; 
+    width:24px; 
+    height:24px; 
+    text-indent:-7000px;
+  }
+
+  /* pour que l'icone descende légèrement au clic */
+	.icone:active {bottom:19px;}
+	
+	#plus {
+    right:20px; 
+    background:url(img/plus.png) top left no-repeat;
+  }
+
+	#plus:hover {
+    background:url(img/plus2.png) top left no-repeat;
+  }
+
+	#zoom {
+    right:55px; 
+    background:url(img/zoom.png) top left no-repeat;
+  }
+	#zoom:hover {background:url(img/zoom2.png) top left no-repeat;}	
+	
+	#cat {
+    position:absolute; 
+    bottom:20px; left:20px; 
+    color:#fff; 
+    background:url(img/cat.png) top left no-repeat; 
+    padding-left:25px;}
+
+	#cat:hover {
+    background:url(img/cat2.png) top left no-repeat; 
+    color:#ff0060;}
+	
+    /* taille de l'img qui se trouve dans le bloc détail */
+	.thumb {
+    width:50px; 
+    float:left; 
+    margin-right:10px;
+  }
+	
+  /* pluggin pour changer le style des légendes "title" */
+	.tooltipsy {
+    background-color:rgba(0,0,0,0.8); 
+    color:#fff; 
+    padding:3px 10px; 
+    border-radius:50px; 
+    -webkit-border-radius:50px; 
+    -moz-border-radius:50px; 
+    font-size:10px; 
+    text-transform:uppercase; 
+    font-weight:bold;
+  }
+
+  /* création du petit triangle Photoshop pour l'associer à la légende*/
+	.tooltipsy:after {
+    content:url(img/fleche.png); 
+    width:10px; 
+    height:8px; 
+    position:absolute; 
+    top:-12px; 
+    left:0px; 
+    /* width:100%; pour centrer la flèche */
+    width:100%; 
+    text-align:center;
+  }
+	
+	
+		
+	  
